@@ -10,9 +10,6 @@ class HomeScreen extends StatefulWidget {
 }
 class _HomeScreenState extends State<HomeScreen> {
   List<Photo> photoList = [];
-  void hello(http.Response resp){
-    print(resp.body);
-  }
   Future<List<Photo>> getData () async{
     final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
     var data = jsonDecode(response.body.toString());
@@ -32,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Api Practice chal rahi hai'),
+        title: const Text('Api Practice'),
         centerTitle: true,
       ),
       body: Column(
